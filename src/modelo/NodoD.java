@@ -9,15 +9,15 @@ package modelo;
  * @author GIOVANNI
  */
 public class NodoD {
-    int dato;
+    Computador computador;
     NodoD anterior,siguiente;
- public NodoD(int dato) {///cuando  hay nodos
-        this.dato = dato;
+ public NodoD(Computador computador) {///cuando  hay nodos
+        this.computador = computador;
         this.anterior = null;
         this.siguiente = null;
     }
-    public NodoD(int dato,NodoD siguiente, NodoD anterior ) {///cuando no hay nodos
-        this.dato = dato;
+    public NodoD(Computador computador,NodoD siguiente, NodoD anterior ) {///cuando no hay nodos
+        this.computador = computador;
         this.anterior = anterior;
         this.siguiente = siguiente;
     }

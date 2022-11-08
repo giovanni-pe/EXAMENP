@@ -5,17 +5,18 @@
 package vista;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author GIOVANNI
  */
-public class VistaListaDoble extends javax.swing.JFrame {
+public class VistaLista extends javax.swing.JFrame {
     public int opcion=0;
     /**
      * Creates new form VistaListaDoble
      */
-    public VistaListaDoble() {
+    public VistaLista() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setIconImage(this.getIconImage());
@@ -43,8 +44,14 @@ public class VistaListaDoble extends javax.swing.JFrame {
         btn_ingresarInicio = new javax.swing.JButton();
         txt_id = new javax.swing.JTextField();
         btn_mostrardesdeInicio = new javax.swing.JButton();
-        btn_verTabla = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btn_guardar = new javax.swing.JButton();
+        lbl_tipolista = new javax.swing.JLabel();
+        txt_marca = new javax.swing.JTextField();
+        txt_procesador = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        btn_mostrardesdeFin = new javax.swing.JButton();
         lbl_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,9 +69,9 @@ public class VistaListaDoble extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 510, 80, -1));
 
-        lbl_insignia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/insignia.png"))); // NOI18N
+        lbl_insignia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/insignia1.png"))); // NOI18N
         lbl_insignia.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(lbl_insignia, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 210, 230));
+        getContentPane().add(lbl_insignia, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 150, 180));
 
         txtA_monitorprin.setBackground(new java.awt.Color(204, 255, 255));
         txtA_monitorprin.setColumns(20);
@@ -74,22 +81,21 @@ public class VistaListaDoble extends javax.swing.JFrame {
         txtA_monitorprin.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(txtA_monitorprin);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 530, 60));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 560, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNAS.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 100));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 730, 100));
 
         btn_ingresarInicio.setBackground(new java.awt.Color(102, 102, 255));
         btn_ingresarInicio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_ingresarInicio.setForeground(new java.awt.Color(255, 255, 255));
-        btn_ingresarInicio.setText("ingresar por el inicio ");
+        btn_ingresarInicio.setText("ingresar ");
         btn_ingresarInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ingresarInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_ingresarInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 200, 20));
+        getContentPane().add(btn_ingresarInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 200, 20));
 
         txt_id.setBackground(new java.awt.Color(204, 204, 255));
         txt_id.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -98,33 +104,72 @@ public class VistaListaDoble extends javax.swing.JFrame {
                 txt_idActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 140, -1));
+        getContentPane().add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 140, -1));
 
         btn_mostrardesdeInicio.setBackground(new java.awt.Color(102, 102, 255));
         btn_mostrardesdeInicio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_mostrardesdeInicio.setForeground(new java.awt.Color(255, 255, 255));
-        btn_mostrardesdeInicio.setText("mostrar desde inicio");
+        btn_mostrardesdeInicio.setText("mostrar mostrar pila");
         btn_mostrardesdeInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mostrardesdeInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_mostrardesdeInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, -1));
-
-        btn_verTabla.setBackground(new java.awt.Color(102, 102, 255));
-        btn_verTabla.setForeground(new java.awt.Color(204, 255, 255));
-        btn_verTabla.setText("VER TABLA  DE DATOS");
-        btn_verTabla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_verTablaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_verTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 150, 40));
+        getContentPane().add(btn_mostrardesdeInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 200, -1));
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("ID :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 30, -1));
+        jLabel2.setText("Marca:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 80, -1));
+
+        btn_guardar.setBackground(new java.awt.Color(0, 102, 255));
+        btn_guardar.setFont(new java.awt.Font("Sitka Banner", 3, 14)); // NOI18N
+        btn_guardar.setForeground(new java.awt.Color(204, 255, 255));
+        btn_guardar.setText("guardar cambios");
+        btn_guardar.setToolTipText("");
+        getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 170, -1));
+
+        lbl_tipolista.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
+        getContentPane().add(lbl_tipolista, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 250, 20));
+
+        txt_marca.setBackground(new java.awt.Color(204, 204, 255));
+        txt_marca.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txt_marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_marcaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 140, -1));
+
+        txt_procesador.setBackground(new java.awt.Color(204, 204, 255));
+        txt_procesador.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txt_procesador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_procesadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_procesador, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 140, -1));
+
+        jLabel3.setBackground(new java.awt.Color(51, 51, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Procesador:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 90, -1));
+
+        jLabel4.setBackground(new java.awt.Color(51, 51, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("ID :");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 30, -1));
+
+        btn_mostrardesdeFin.setBackground(new java.awt.Color(102, 102, 255));
+        btn_mostrardesdeFin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_mostrardesdeFin.setForeground(new java.awt.Color(255, 255, 255));
+        btn_mostrardesdeFin.setText("mostrar mostrar cola");
+        btn_mostrardesdeFin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mostrardesdeFinActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_mostrardesdeFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 200, -1));
 
         lbl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         lbl_fondo.setText("ddd");
@@ -134,7 +179,7 @@ public class VistaListaDoble extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
+ System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_ingresarInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarInicioActionPerformed
@@ -150,9 +195,17 @@ public class VistaListaDoble extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_idActionPerformed
 
-    private void btn_verTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verTablaActionPerformed
+    private void txt_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_marcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_verTablaActionPerformed
+    }//GEN-LAST:event_txt_marcaActionPerformed
+
+    private void txt_procesadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_procesadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_procesadorActionPerformed
+
+    private void btn_mostrardesdeFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrardesdeFinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_mostrardesdeFinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,20 +224,21 @@ public class VistaListaDoble extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaListaDoble.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaListaDoble.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaListaDoble.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaListaDoble.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaListaDoble().setVisible(true);
+                new VistaLista().setVisible(true);
             }
         });
     }
@@ -192,16 +246,22 @@ public class VistaListaDoble extends javax.swing.JFrame {
   
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn_guardar;
     public javax.swing.JButton btn_ingresarInicio;
+    public javax.swing.JButton btn_mostrardesdeFin;
     public javax.swing.JButton btn_mostrardesdeInicio;
-    public javax.swing.JButton btn_verTabla;
     public javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel lbl_fondo;
     public javax.swing.JLabel lbl_insignia;
+    public javax.swing.JLabel lbl_tipolista;
     public javax.swing.JTextArea txtA_monitorprin;
     public javax.swing.JTextField txt_id;
+    public javax.swing.JTextField txt_marca;
+    public javax.swing.JTextField txt_procesador;
     // End of variables declaration//GEN-END:variables
 }
